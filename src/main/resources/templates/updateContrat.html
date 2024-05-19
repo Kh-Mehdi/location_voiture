@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier Contrat</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/5.3.3/css/bootstrap.min.css"/>
+    <script src="webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* Custom CSS for background image */
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            height: 100vh; /* Ensure the body takes the full height of the viewport */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Custom CSS for footer */
+        footer {
+            text-align: center;
+            padding: 10px 0; /* Adjust padding as needed */
+            background-color: rgba(255, 255, 255, 0.8); /* Optional: Add a background color with transparency */
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+
+        /* Optional: Styling for the card to make it more readable against the background */
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 20px;
+        }
+
+        .content {
+            flex: 1; /* This makes sure the content takes all the available space except for the footer */
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Modifier Voiture</h2>
+    <form th:action="@{/updateContrat}" th:object="${contrat}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <div class="mb-3">
+            <label for="id" class="form-label">Id</label>
+            <input type="text" class="form-control" id="id" th:field="*{id}" required>
+        </div>
+        <div class="mb-3">
+            <label for="nb_j" class="form-label">nb_j</label>
+            <input type="number" class="form-control" id="nb_j" th:field="*{nb_j}" required>
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter Voiture</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/5.3.3/css/bootstrap.min.css"/>
+    <script src="webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* Custom CSS for background image */
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            height: 100vh; /* Ensure the body takes the full height of the viewport */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Custom CSS for footer */
+        footer {
+            text-align: center;
+            padding: 10px 0; /* Adjust padding as needed */
+            background-color: rgba(255, 255, 255, 0.8); /* Optional: Add a background color with transparency */
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+
+        /* Optional: Styling for the card to make it more readable against the background */
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 20px;
+        }
+
+        .content {
+            flex: 1; /* This makes sure the content takes all the available space except for the footer */
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Ajouter un Client</h2>
+    <form th:action="@{/ajouterClient}" th:object="${client}" method="post">
+    <div class="mb-3">
+            <label for="nom" class="form-label">nom</label>
+            <input type="text" class="form-control" id="nom" th:field="*{nom}" required>
+        </div>
+        <div class="mb-3">
+            <label for="prenom" class="form-label">prenom</label>
+            <input type="text" class="form-control" id="prenom" th:field="*{prenom}" required>
+        </div>
+        <div class="mb-3">
+            <label for="adresse" class="form-label">adresse</label>
+            <input type="text" class="form-control" id="adresse" th:field="*{adresse}" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">email</label>
+            <input type="text" class="form-control" id="email" th:field="*{email}" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">password</label>
+            <input type="text" class="form-control" id="password" th:field="*{password}" required>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+</div>
+</body>
+</html>
