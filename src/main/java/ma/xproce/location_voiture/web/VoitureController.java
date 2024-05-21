@@ -106,5 +106,8 @@ public class VoitureController {
         }
         return "redirect:/listVoiture";
     }
-
+    @GetMapping("/index")
+    public String index(Model model) {
+        return "index"; // Retourne la vue 'index.html'
+    }
 }

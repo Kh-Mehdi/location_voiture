@@ -20,6 +20,8 @@ public class ClientController {
     ClientManager clientManager;
 
 
+
+
     @GetMapping("/ajouterClient")
     public String ajouterClientForm(Model model) {
         model.addAttribute("client", new Client());
@@ -87,5 +89,10 @@ public class ClientController {
             clientManager.updateClient(existingClient);
         }
         return "redirect:/listClient";
+    }
+
+    @GetMapping("/index1")
+    public String index(Model model) {
+        return "index"; // Retourne la vue 'index.html'
     }
 }

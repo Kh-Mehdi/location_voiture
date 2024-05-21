@@ -116,4 +116,9 @@ public class ContratLocationController {
         }
         return "redirect:/listContrat";
     }
+
+    @GetMapping("/index2")
+    public String index(Model model) {
+        return "index"; // Retourne la vue 'index.html'
+    }
 }
