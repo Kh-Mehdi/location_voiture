@@ -54,11 +54,11 @@
         </div>
         <div class="mb-3">
             <label for="annee" class="form-label">Année</label>
-            <input type="number" class="form-control" id="annee" th:field="*{annee}" required>
+            <input type="number" min="1" class="form-control" id="annee" th:field="*{annee}" required>
         </div>
         <div class="mb-3">
-            <label for="prixJour" class="form-label">Prix par Jour</label>
-            <input type="number" class="form-control" id="prixJour" th:field="*{prixJour}" required>
+            <label for="prixJour"  class="form-label">Prix par Jour</label>
+            <input type="number" class="form-control" min="1" id="prixJour" th:field="*{prixJour}" required>
         </div>
         <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>

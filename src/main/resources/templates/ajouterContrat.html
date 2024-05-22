@@ -90,7 +90,7 @@
     </div>
     <div class="mb-3">
         <label for="nb_j" class="form-label" >Nombre de Jours:</label>
-        <input type="number" class="form-control" id="nb_j" th:field="*{nb_j}"/>
+        <input type="number" class="form-control" id="nb_j" min="1" th:field="*{nb_j}"/>
     </div>
         <button type="submit" class="btn btn-primary ">Ajouter Contrat</button>
 
